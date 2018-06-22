@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var argue = require('..');
+var program = require('commander');
+
+var packageInfo = require(__dirname + '/../package.json');
+
+program
+  .version(packageInfo.version)
+  .usage('[options] [<since>] [<until>]\n\t git-argue [options] [-a|--all] <commit-ish>')
+  .option('-d, --dir <path>', 'force git-argue to run in the specified directory rather than attempt to detect the repository root');
+
+program.parse(process.argv);
+
+var opts = Object.assign({}, program)
+
+if (opts.debug) {
+    opts.logger = console.log;
+}
+
+if (opts.dir) {
+    opts.repoPath = opts.dir;
+}
+
+if (program.at) {
+    if (program.args.length === 1) {
+        opts.at = program.args[0];
+    } else {
+        console.error('-a/--at requires a single commit to be specified');
+        process.exit(1);
+    }
+} else {
+    switch (program.args.length)
+    {
+        case 0:
+            opts.since = 'HEAD~1';
+            opts.until = 'HEAD'
+            break;
+        case 1:
+            opts.since = program.args[0];
+            opts.until = 'HEAD'
+            break;
+        case 2:
+            opts.since = program.args[0];
+            opts.until = program.args[1];
+            break;
+        default:
+            program.help(); // terminates
+    }
+}
+
+argue(opts)

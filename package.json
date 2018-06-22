@@ -1,0 +1,30 @@
+{
+  "name": "git-argue",
+  "version": "0.0.1",
+  "description": "Don't touch my Git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tywalch/git-argue.git"
+  },
+  "keywords": [
+    "git"
+  ],
+  "author": "Tyler W. Walch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tywalch/git-argue/issues"
+  },
+  "homepage": "https://github.com/tywalch/git-argue#readme",
+  "bin": {
+    "git-argue": "./bin/git-argue"
+  },
+  "dependencies": {
+    "byline": "4.1.1",
+    "colog": "1.0.2",
+    "commander": "2.15.1"
+  }
+}
