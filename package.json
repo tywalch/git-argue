@@ -1,6 +1,6 @@
 {
   "name": "git-argue",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Don't touch my Git",
   "main": "index.js",
   "scripts": {

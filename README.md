@@ -26,13 +26,13 @@ When installed globally:
 
 	$ git argue HEAD~1 HEAD
 
-  lib/models/sequelize/users.js ---+++
-  | tywalch | Harry Wazzell |
-     7    tywalch                      EndUserName: {
-     8    tywalch                        type: DataTypes.STRING,
-     7    tywalch                      EndUserNameKey: {
-     8    Harry Wazzell                  type: DataTypes.UUID,
-  
-     11   tywalch                        validate: validations.validate('Username', validations.presets.GUID)
-     11   Harry Wazzell                  validate: validations.validate('End Username Key', validations.presets.GUID)
+    lib/models/sequelize/users.js ---+++
+    | tywalch | Harry Wazzell |
+      7    tywalch                      EndUserName: {
+      8    tywalch                        type: DataTypes.STRING,
+      7    tywalch                      EndUserNameKey: {
+      8    Harry Wazzell                  type: DataTypes.UUID,
+      
+      11   tywalch                        validate: validations.validate('Username', validations.presets.GUID)
+      11   Harry Wazzell                  validate: validations.validate('End Username Key', validations.presets.GUID)
 
