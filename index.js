@@ -1,5 +1,3 @@
-//const _ = require('lodash');
-//const RSVP = require('rsvp');
 const spawn = require('child_process').spawn;
 const byline = require('byline');
 const util = require('util');
@@ -17,13 +15,6 @@ const BLAME_RX =       /^[^(]*\((.*?)\s+\d{4}-\d{2}-\d{2}/;
 const BLAME_EMAIL_RX = /^[^(]*\(<(.*?)>\s+\d{4}-\d{2}-\d{2}/;
 const LINE_META_RX = /^[\^\w]{7,9}\s[\w\/.]*\s*\([\w\s-:@.]*\)\s/;
 const SET_NUMBER_RX = /^\d+\)\s/;
-
-function successResponse(result) {
-  console.log('SUCCESS!', result);
-}
-function failuireResponse(result) {
-  console.log('FAILURE!', result);
-}
 
 function displayLine(str, num, owner, alter) {
   const LINE_NUM_LENGTH = 4;
@@ -114,7 +105,7 @@ function accuse(path, changes, time, opts) {
       at = undefined;
     }
 
-    /*if (opts.ignoreWhitespace)*/ args.splice(2, 0, "-w");
+    args.splice(2, 0, "-w");
     if (opts.email) args.splice(2, 0, "-e");
 
     git(args, {
