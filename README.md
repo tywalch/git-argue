@@ -1,9 +1,8 @@
 # git-argue
 ###### Don't touch my Git
-A novelty app for office jerk to protect their code at all costs. Displays changes to specifically your code between two commits as well as who's desk to walk over to and argue.
+A novelty app for office jerks who protect their code at all costs. Displays changes to specifically your code between two commits as well as who's desk to walk over to and argue.
 
-This code was written as a fun project to play around with a few concepts. The script's name is in jest and it is not intended to contribute to a toxic collaborative environment. Here are some ideas for it's positive use:
-1. Improve code     
+This code was written as a fun project to play around with a few git concepts. The script's name is in jest and the project is not intended to contribute to a toxic collaborative environment.
 
 ## Usage
      git-argue [options] [<since>] [<until>]
